@@ -1,0 +1,38 @@
+
+  <div class="titoloGioco">  
+    <h1>ROW  <span style="color: #c02936; font-size: 70px;" > AND </span> ORDER</h1>
+  </div>
+  <div class="gameRules">
+   <p>L'obbiettivo è allineare i film dal più <span> vecchio </span>al più <span> giovane </span></p> 
+  </div>
+
+
+
+
+
+    <div cdkDropList cdkDropListOrientation="horizontal" class="example-list" (cdkDropListDropped)="drop($event)">
+      <div class="example-box" *ngFor="let movieee of movie" cdkDrag>
+        <img  src="https://image.tmdb.org/t/p/w185/{{movieee.poster_path}}" [alt]="movieee.title"> 
+      </div>
+    </div>
+    <button class="tasto" mat-raised-button  type="submit" (click)="checkResult()" >SUBMIT</button>
+    
+    
+
+  <!--      <img src="https://image.tmdb.org/t/p/w185/{{movie.poster_path}}" alt="" srcset="">
+  -->
+<!--     <pre *ngFor="let film of movie">{{ film.release_date | json }} - {{ film. original_title | json}}</pre>
+    <div>----------------------</div>
+    <pre *ngFor="let film of orderedMovie">{{ film.release_date | json }} - {{ film. original_title | json}}</pre>
+    <div>----------------------</div>
+    <pre *ngFor="let film of MovieServ.orderedMoviz">{{ film.release_date | json }} - {{ film. original_title | json}}</pre> -->
+   <!--  <pre *ngFor="let mov of moviee"> {{ mov.original_title | json }}</pre>
+ -->
+
+<!--     <div  cdkDropList cdkDropListOrientation="horizontal" class="example-list" (cdkDropListDropped)="drop($event)">
+      <div class="example-box" *ngFor="let movieee of movie" cdkDrag>
+        <img  src="https://image.tmdb.org/t/p/w185/{{movieee.poster_path}}" [alt]="movieee.title"> 
+      </div>
+      <button mat-raised-button color="primary" type="submit" (click)="checkResult()" >SUBMITY</button>
+    </div>
+ -->

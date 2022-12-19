@@ -1,0 +1,102 @@
+<ng-template #content let-c="close" let-d="dismiss">
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Buona Scelta!</h4>
+    <button type="button" class="btn-close" aria-label="Close" (click)="d('Cross click')"></button>
+  </div>
+
+  <div class="modal-body">
+
+    <form class="format" #data="ngForm" (ngSubmit)="onSubmit(data)">
+
+      <ngb-rating [(rate)]="currentRate" ngModel name="rating"></ngb-rating>
+      <hr />
+      <pre>Rate: <b>{{currentRate}}</b></pre>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Comment</mat-label>
+        <input matInput type="text" ngModel name="comment" required />
+      </mat-form-field>
+      <button type="submit" class="btn btn-outline-dark" (click)="c('Save click')">Save</button>
+    </form>
+  </div>
+
+  <div class="modal-footer">
+    
+  </div>
+</ng-template>
+
+<!-- <button class="btn btn-lg btn-outline-primary" (click)="open(content)">Launch demo modal</button> -->
+
+<!-- modale SOPRA -->
+
+<div class="punteggio">HAI TOTALIZZATO {{ MovieServ.rating }} PUNTI</div>
+
+<div class="container"> <button
+  class="homebutton"
+      mat-raised-button
+      type="submit"
+      routerLink=""
+       >HOME</button></div>
+<!-- 
+<pre *ngFor="let film of MovieServ.orderedMoviz">{{ film.id | json }} - {{ film. original_title | json}}</pre>
+ -->
+<!-- <div class="recensione" [hidden]="isHide">
+  <form class="format" #data="ngForm" (ngSubmit)="onSubmit(data)">
+    
+    <ngb-rating [(rate)]="currentRate" ngModel name="rating"></ngb-rating>
+    <hr />
+    <pre>Rate: <b>{{currentRate}}</b></pre> 
+
+    <mat-form-field appearance="fill">
+      <mat-label>comment</mat-label>
+      <input matInput type="text" ngModel name="comment" required />
+    </mat-form-field>
+
+     <button
+      mat-raised-button
+      color="primary"
+      type="submit"
+      [disabled]="!data.valid"
+    >
+      SUBMITY
+    </button> 
+  </form>
+</div> -->
+
+<div class="wrapper">
+  <div class="carta" *ngFor="let film of MovieServ.orderedMoviz">
+    <mat-card class="example-card">
+      <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+      </mat-card-header>
+      <img mat-card-image src="https://image.tmdb.org/t/p/w185/{{ film.poster_path }}" width="400" height="450" />
+      <mat-card-title>{{ film.original_title }}</mat-card-title>
+      <mat-card-actions>
+        <!-- <button mat-button (click)="onFavouriteSubmite(film.id)">FAVOURITE</button> -->
+        <button class="btn btn-outline-danger tastoFav" (click)="open(content, film.id)">Favourite</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>
+
+<!-- <form class="format" #data="ngForm" (ngSubmit)="onSubmit(data)">
+  <mat-form-field appearance="fill">
+    <mat-label>rating</mat-label>
+    <input matInput type="text" name="rating" ngModel required />
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>comment</mat-label>
+    <input matInput type="text" ngModel name="comment" required />
+  </mat-form-field>
+  <button
+    mat-raised-button
+    color="primary"
+    type="submit"
+    [disabled]="!data.valid"
+  >
+    SUBMITY
+  </button>
+</form>
+ -->
+ 
