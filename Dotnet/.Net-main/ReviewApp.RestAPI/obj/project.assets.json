@@ -6415,35 +6415,37 @@
     ]
   },
   "packageFolders": {
-    "/Users/mz/.nuget/packages/": {}
+    "C:\\Users\\Sleepy69\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/mz/Desktop/TNV/Progetto finale/ReviewApp/ReviewApp.RestAPI/ReviewApp.RestAPI.csproj",
+      "projectUniqueName": "C:\\PROGRAMMAZIONE\\repositoryGitHub\\Row And Order\\Dotnet\\.Net-main\\ReviewApp.RestAPI\\ReviewApp.RestAPI.csproj",
       "projectName": "ReviewApp.RestAPI",
-      "projectPath": "/Users/mz/Desktop/TNV/Progetto finale/ReviewApp/ReviewApp.RestAPI/ReviewApp.RestAPI.csproj",
-      "packagesPath": "/Users/mz/.nuget/packages/",
-      "outputPath": "/Users/mz/Desktop/TNV/Progetto finale/ReviewApp/ReviewApp.RestAPI/obj/",
+      "projectPath": "C:\\PROGRAMMAZIONE\\repositoryGitHub\\Row And Order\\Dotnet\\.Net-main\\ReviewApp.RestAPI\\ReviewApp.RestAPI.csproj",
+      "packagesPath": "C:\\Users\\Sleepy69\\.nuget\\packages\\",
+      "outputPath": "C:\\PROGRAMMAZIONE\\repositoryGitHub\\Row And Order\\Dotnet\\.Net-main\\ReviewApp.RestAPI\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/mz/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\Sleepy69\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "/Users/mz/Desktop/TNV/Progetto finale/ReviewApp/ReviewApp.Core/ReviewApp.Core.csproj": {
-              "projectPath": "/Users/mz/Desktop/TNV/Progetto finale/ReviewApp/ReviewApp.Core/ReviewApp.Core.csproj"
+            "C:\\PROGRAMMAZIONE\\repositoryGitHub\\Row And Order\\Dotnet\\.Net-main\\ReviewApp.Core\\ReviewApp.Core.csproj": {
+              "projectPath": "C:\\PROGRAMMAZIONE\\repositoryGitHub\\Row And Order\\Dotnet\\.Net-main\\ReviewApp.Core\\ReviewApp.Core.csproj"
             },
-            "/Users/mz/Desktop/TNV/Progetto finale/ReviewApp/ReviewApp.DB/ReviewApp.DB.csproj": {
-              "projectPath": "/Users/mz/Desktop/TNV/Progetto finale/ReviewApp/ReviewApp.DB/ReviewApp.DB.csproj"
+            "C:\\PROGRAMMAZIONE\\repositoryGitHub\\Row And Order\\Dotnet\\.Net-main\\ReviewApp.DB\\ReviewApp.DB.csproj": {
+              "projectPath": "C:\\PROGRAMMAZIONE\\repositoryGitHub\\Row And Order\\Dotnet\\.Net-main\\ReviewApp.DB\\ReviewApp.DB.csproj"
             }
           }
         }
@@ -6490,7 +6492,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.401/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   },
