@@ -1,8 +1,9 @@
+import { ProfileComponent } from './profile/profile.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { GamePageComponent } from './game-page/game-page.component';
 import { MainPageComponent } from './main-page/main-page.component';
-import { ReviewPageComponent } from './game-page/review-page/review-page.component';
+import { ReviewPageComponent } from './review-page/review-page.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { RankingComponent } from './ranking/ranking.component';
@@ -15,6 +16,7 @@ const routes: Routes = [
   { path: 'main-page', component: MainPageComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'ranking', component: RankingComponent },
+  { path: 'profile', component: ProfileComponent },
 ];
 
 @NgModule({

@@ -1,9 +1,8 @@
 
-
-<router-outlet></router-outlet>
-<!-- <app-game-page [moviesMainPage]="movie" hidden></app-game-page>
- --> <!-- <div>-------------------------</div>
- --><!-- <pre *ngFor="let film of movie">{{ film.release_date | json }} - {{ film. original_title | json}}</pre>
-<div>-------------------------</div>
-<pre *ngFor="let film of orderedMovie" >{{ film.release_date | json }} - {{ film. original_title | json}}</pre> -->
-<!-- <button (click)="onSolution()"> Soluzione </button> -->
+<app-nav-after-log *ngIf="authService.isAuthenticated(); else notLoggedNavbar"></app-nav-after-log>
+<ng-template #notLoggedNavbar>
+    <app-nav-before-log></app-nav-before-log>
+</ng-template>
+<div class="body">
+    <router-outlet></router-outlet>
+</div>

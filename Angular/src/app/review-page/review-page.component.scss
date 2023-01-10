@@ -1,0 +1,114 @@
+.format {
+  display: flex;
+  flex-direction: column;
+}
+.punteggio {
+display: flex;
+justify-content: center;
+align-self: center;
+font-size: 40px;
+font-weight: 800;
+margin-top: 50px;
+margin-bottom: 50px;
+}
+
+
+.example-card {
+max-width: 600px;
+height: 630px;
+margin: 5px;
+
+}
+
+.example-header-image {
+/* background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg%27); */
+background-size: cover cover;
+}
+
+
+.wrapper {
+display: grid;
+grid-template-columns: 20% 20% 20% 20% 20%;
+padding: 10px;
+
+margin: 10px;
+}
+
+:host {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex-wrap: nowrap;
+}
+
+
+.recensione {
+position:absolute;
+background-color: aliceblue;
+border: 1px solid black;
+width: 700px; 
+height: 500px;
+margin-top: 200px;
+margin-left: 450px;
+z-index: 90;
+}
+
+
+.homebutton{
+background-color: #c02936 ;
+color: white;
+
+}
+.container{
+display: flex;
+justify-content: center;
+}
+
+
+
+.first-text{
+position: relative;
+left: 50%;
+translate: -50%;
+width: 89%;
+text-shadow: -2px 1px 3px rgb(30, 28, 28);
+height: 50px;
+}
+
+.first-text p{
+position: relative;
+top: 0px;
+bottom: 10px;
+}
+
+.list {
+margin-top: 10px;
+margin-bottom: 100px;
+
+box-shadow: 0 5px 5px -3px black,
+
+0 3px 14px 2px rgb(134, 0, 0);
+
+position: relative;
+left: 50%;
+translate: -50%;
+top: 0px;
+
+max-width: 1400px;
+min-height: 60px;
+display: flex;
+flex-direction: row;
+overflow: hidden;
+}
+
+.box{
+width: 140px;
+
+}
+
+.box img{
+display: flex;
+flex-direction: row;
+width: 140px;
+height: 240px;
+}

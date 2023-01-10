@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { User } from 'models/user';
+import { User } from 'src/models/user';
 
 @Component({
   selector: 'app-main-page',

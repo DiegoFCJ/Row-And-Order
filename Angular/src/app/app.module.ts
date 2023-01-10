@@ -8,7 +8,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { MainPageComponent } from './main-page/main-page.component';
 import { GamePageComponent } from './game-page/game-page.component';
-import { ReviewPageComponent } from './game-page/review-page/review-page.component';
+import { ReviewPageComponent } from './review-page/review-page.component';
 import { LoginComponent } from './login/login.component';
 
 
@@ -23,6 +23,12 @@ import { NgbRatingModule } from '@ng-bootstrap/ng-bootstrap';
 import { RegisterComponent } from './register/register.component';
 import { RankingComponent } from './ranking/ranking.component';
 import { MatTableModule } from '@angular/material/table';
+import { HeroComponent } from './hero/hero.component';
+import { NavBeforeLogComponent } from './navbars/navbar-before-log/nav-before-log.component';
+import { NavAfterLogComponent } from './navbars/nav-after-log/nav-after-log.component';
+import { LogoutComponent } from './logout/logout.component';
+import { ProfileComponent } from './profile/profile.component';
+import { ButtonComponent } from './button/button.component';
 
 
 @NgModule({
@@ -34,6 +40,12 @@ import { MatTableModule } from '@angular/material/table';
     LoginComponent,
     RegisterComponent,
     RankingComponent,
+    NavBeforeLogComponent,
+    HeroComponent,
+    NavAfterLogComponent,
+    LogoutComponent,
+    ProfileComponent,
+    ButtonComponent,
   ],
   imports: [
     BrowserModule,

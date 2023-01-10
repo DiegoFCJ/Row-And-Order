@@ -1,13 +1,12 @@
-import { UserLocalSt } from './../../../models/user';
+import { UserLocalSt } from '../../models/user';
 import { AuthService } from 'src/services/auth.service';
 import { HttpClient } from '@angular/common/http';
 import { Component, Input, OnInit } from '@angular/core';
-import { MovieRootObject } from 'models/movies';
+import { MovieRootObject } from 'src/models/movies';
 import { MovieAPIService } from 'src/services/movie-api.service';
-import {DragDropModule} from '@angular/cdk/drag-drop';
-import {CdkDragDrop, moveItemInArray} from '@angular/cdk/drag-drop';
+import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 import { Router } from '@angular/router';
-import { ScoreInfo, User } from 'models/user';
+import { ScoreInfo, User } from 'src/models/user';
 
 
 @Component({
@@ -16,85 +15,61 @@ import { ScoreInfo, User } from 'models/user';
   styleUrls: ['./game-page.component.scss'],
 })
 export class GamePageComponent implements OnInit {
-  
-  constructor(private http: HttpClient, protected MovieServ: MovieAPIService, private router: Router, protected authServ: AuthService) {}
+
+  constructor(private http: HttpClient, protected MovieServ: MovieAPIService, private router: Router, protected authServ: AuthService) { }
   currentUser: Partial<UserLocalSt> = this.authServ.getCurrentUser();
 
   ngOnInit(): void {
     this.MovieServ.rating;
-    console.log(this.MovieServ.userNameLogged)
-
+     console.log(this.MovieServ.userNameLogged)
+ 
+    const attributes = ['revenue', 'release_date', 'popularity'];
+    this.MovieServ.attribute = attributes[Math.floor(Math.random() * attributes.length)];
+    console.log(this.MovieServ.attribute);
     for (let i = 0; i < 10; i++) {
-      this.getRandomMovie();
-    } 
-
-/*      for (let i = 0; i < 10; i++) {
-      const latestId = 30000;
-      const randomId = Math.round(Math.random() * latestId);
-
-      this.MovieServ.getRandomMoviee(
-        `https://api.themoviedb.org/3/movie/${randomId}?api_key=3949444e64e7a9355250d3b1b5c59bf1&language=it-it`
-      ).subscribe( { next: (data)=> {
-        console.log(data);
-        if (data.poster_path) {
-        this.moviee.push(data);
-      }
-    }}
-    );
-  }  */
+      this.getRandomMovie(this.MovieServ.attribute);
+    }
+    console.log(this.movie + " " + this.MovieServ.attribute)
   }
 
-  moviee: MovieRootObject[] = [];
-  movie: MovieRootObject[] = [];
-  orderedMovie: MovieRootObject[] = [];
+  movie: MovieRootObject[] = [];   //array su questo component
 
-  getRandomMovie() {
-    // Per determinare questo valore facciamo eventualmente una query su movies/latest per avere l'id dell'ultimo Film inserito su TMDB
+  getRandomMovie(attributeS: any) {
     const latestId = 30000;
     const randomId = Math.round(Math.random() * latestId);
-
-    this.http
-      .get<MovieRootObject>(
-        `https://api.themoviedb.org/3/movie/${randomId}?api_key=3949444e64e7a9355250d3b1b5c59bf1&language=it-it`
-      )
-      .subscribe({
-        next: (res) => {
+    this.http.get<MovieRootObject>(`https://api.themoviedb.org/3/movie/${randomId}?api_key=3949444e64e7a9355250d3b1b5c59bf1&language=it-it`)
+      .subscribe({next: (res) => {
           console.log('ID trovato', randomId);
 
           if (res.poster_path) {
-            this.movie.push(res); ///////////////////
-            this.orderedMovie.push(res);
-            this.orderedMovie.sort((a, b) =>
-              a.release_date > b.release_date? 1: b.release_date > a.release_date? -1: 0)
+            this.movie.push(res); 
             this.MovieServ.orderedMoviz.push(res);
-            this.MovieServ.orderedMoviz.sort((a, b) =>
-            a.release_date > b.release_date? 1: b.release_date > a.release_date? -1: 0)
+            this.MovieServ.orderedMoviz.sort((a: any, b: any) =>
+              a[attributeS] > b[attributeS] ? 1 : b[attributeS] > a[attributeS] ? -1 : 0)
           } else {
             console.log('Film senza poster');
-            this.getRandomMovie();
+            this.getRandomMovie(attributeS);
           }
         },
         error: () => {
           console.log('ID non esistente, retry!', randomId);
-          this.getRandomMovie();
+          this.getRandomMovie(attributeS);
         },
       });
   }
 
-  drop(event: CdkDragDrop<{title: string; poster: string}[]>) {
+
+  drop(event: CdkDragDrop<{ title: string; poster: string }[]>) {
     moveItemInArray(this.movie, event.previousIndex, event.currentIndex);
   }
 
-  checkResult(){
-
-    
+  checkResult() {
     console.log(this.MovieServ.userNameLogged)
-    
-    
+
     this.router.navigate(['/review-page']);
-    for( let i = 0; i < 10; i++){
-      if(this.movie[i] === this.MovieServ.orderedMoviz[i]){
-        this.MovieServ.rating = this.MovieServ.rating +10;
+    for (let i = 0; i < 10; i++) {
+      if (this.movie[i] === this.MovieServ.orderedMoviz[i]) {
+        this.MovieServ.rating = this.MovieServ.rating + 10;
       }
     }
 
@@ -105,6 +80,8 @@ export class GamePageComponent implements OnInit {
 
     }
 
-    this.http.post<ScoreInfo>(`http://localhost:4567/score`, scoreComp).subscribe(()=> {console.log(scoreComp + 'HA FUNZIONATO')})   
+    this.http.post<ScoreInfo>(`http://localhost:4567/score`, scoreComp).subscribe(() => { console.log(scoreComp + 'HA FUNZIONATO') })
   }
 }
+
+

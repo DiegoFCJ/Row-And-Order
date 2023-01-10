@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { MovieRootObject } from 'models/movies';
+import { MovieRootObject } from 'src/models/movies';
+import { AuthService } from 'src/services/auth.service';
 
 
 @Component({
@@ -11,13 +12,11 @@ import { MovieRootObject } from 'models/movies';
 export class AppComponent implements OnInit {
   title = 'TNVLezioni';
 
-  
-  ngOnInit(): void {
+  constructor(protected authService: AuthService) {}
 
+  ngOnInit(): void {
   }
 
-
-  constructor(private http: HttpClient) {}
 } 
 
 

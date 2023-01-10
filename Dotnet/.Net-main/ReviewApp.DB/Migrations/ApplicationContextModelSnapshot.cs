@@ -45,7 +45,7 @@ namespace ReviewApp.DB.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("review");
+                    b.ToTable("comment");
                 });
 #pragma warning restore 612, 618
         }

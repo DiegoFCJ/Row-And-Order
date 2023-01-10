@@ -1,0 +1,28 @@
+<ng-template #content let-c="close" let-d="dismiss">
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Buona Scelta!</h4>
+    <button type="button" class="btn-close" aria-label="Close" (click)="d('Cross click')"></button>
+  </div>
+  <div class="modal-body">
+    <form class="format" #data="ngForm" (ngSubmit)="onSubmit(data)">
+      <ngb-rating [(rate)]="currentRate" ngModel name="rating"></ngb-rating>
+      <hr />
+      <pre>Rate: <b>{{currentRate}}</b></pre>
+      <mat-form-field appearance="fill">
+        <mat-label>Comment</mat-label>
+        <input matInput type="text" ngModel name="comment" required />
+      </mat-form-field>
+      <button type="submit" class="btn btn-outline-dark" (click)="c('Save click')">Save</button> 
+    </form>
+  </div>
+  <div class="modal-footer">
+  </div>
+</ng-template>
+<div class="punteggio">HAI TOTALIZZATO {{ MovieServ.rating }} PUNTI</div>
+<div class="first-text">
+</div>
+  <div class="list">
+    <div class="box" *ngFor="let movieElement of MovieServ.orderedMoviz; let j = index">
+      <img  src="https://image.tmdb.org/t/p/w185/%7B%7BmovieElement.poster_path%7D%7D" [alt]="movieElement.title"> 
+    </div>
+  </div>

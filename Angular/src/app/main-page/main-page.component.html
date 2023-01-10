@@ -1,30 +1,11 @@
 
-<!-- <pre *ngFor="let users of listaUsers ">{{ users.name | json }} - {{ users.score | json}}</pre>
-
- -->
-
 <div class="wrapper">
-    <header>
-      <a href="#" class="logo">Row<span>And</span>Order</a>
-
-      <nav>
-        <ul>
-          <li><a href="#">LOGIN</a></li>
-          <li><a href="#">Iscrizione</a></li>
-          <li><a href="#">Classifica</a></li>
-        </ul>
-      </nav>
-    </header>
-
-    <section class="hero">
-      
-      <div class="leftherosec">
-        <h1>Pronto a giocare?</h1>
-        <p class="subhead">Metti alla prova la tua memoria cinematografica!</p>
-        <button class="custom-btn btn-8"><a style="color: #fff;" (click)="redirect()"><span>Gioca Ora</span></a></button>
-      </div>
-      
-      <div class="heroimg"></div>
-    
-    </section>
-  </div>
+  <section class="hero">
+    <div class="leftherosec">
+      <h1>Pronto a giocare?</h1>
+      <p class="subhead">Metti alla prova la tua memoria cinematografica!</p>
+      <button class="custom-btn btn-8"><a (click)="redirect()"><span>Gioca Ora</span></a></button>
+    </div>
+    <div class="heroimg"></div>
+  </section>
+</div>
