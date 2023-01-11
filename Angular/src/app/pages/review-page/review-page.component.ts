@@ -17,11 +17,15 @@ import { AuthService } from 'src/services/auth.service';
 export class ReviewPageComponent implements OnInit {
 
   currentRate= 2;
-
+  num: number = 0;
   movieID = 0;
 
-
-  constructor(protected authServ: AuthService, config: NgbModalConfig, private modalService: NgbModal, protected MovieServ: MovieAPIService, private http: HttpClient, private router: Router) { 
+  constructor(protected authServ: AuthService, 
+    config: NgbModalConfig, 
+    private modalService: NgbModal, 
+    protected MovieServ: MovieAPIService, 
+    private http: HttpClient, 
+    private router: Router) { 
     config.backdrop = 'static';
         config.keyboard = false;
   }
@@ -53,5 +57,21 @@ export class ReviewPageComponent implements OnInit {
       .subscribe((dat) => {}); 
   }
 
+  
+  numChange(num: number){
+    return this.num = num;
+  }
+
+  justOpenTempl(content: any){
+    this.modalService.open(content);
+  }
+
+  adultsFilm(isAdultFilm: boolean){
+    if(isAdultFilm){
+      return "This film is for adults only! 🔞";
+    }else{
+      return "You can watch this film with your family ✅";
+    }
+  }
 
 }

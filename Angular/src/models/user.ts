@@ -37,5 +37,5 @@ export interface UserLocalSt {
   surname: string;
   email: string;
   username: string;
-  score?: string;
+  score: number;
 }

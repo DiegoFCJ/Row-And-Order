@@ -11,17 +11,10 @@ import { User } from 'src/models/user';
 export class MainPageComponent implements OnInit {
   constructor(private router: Router, private http: HttpClient) {}
 
-  listaUsers: User[] = [];
 
   ngOnInit(): void {
-    this.http
-      .get<User>('http://localhost:8080/api/admin/allUsersDescending?username=admin')
-      .subscribe({
-        next: (res) => {
-          this.listaUsers.push(res); 
-        },
-      });
   }
+  
   redirect() {
     this.router.navigate(['game-page']);
   }
