@@ -1,4 +1,4 @@
-import { UserLocalSt } from '../../models/user';
+import { UserLocalSt } from '../../../models/user';
 import { AuthService } from 'src/services/auth.service';
 import { HttpClient } from '@angular/common/http';
 import { Component, Input, OnInit } from '@angular/core';

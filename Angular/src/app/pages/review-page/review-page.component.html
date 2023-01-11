@@ -23,6 +23,6 @@
 </div>
   <div class="list">
     <div class="box" *ngFor="let movieElement of MovieServ.orderedMoviz; let j = index">
-      <img  src="https://image.tmdb.org/t/p/w185/%7B%7BmovieElement.poster_path%7D%7D" [alt]="movieElement.title"> 
+      <img  src="https://image.tmdb.org/t/p/w185/{{movieElement.poster_path}}" [alt]="movieElement.title"> 
     </div>
   </div>
