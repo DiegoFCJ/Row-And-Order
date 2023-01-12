@@ -15,6 +15,7 @@ import { ScoreInfo, User } from 'src/models/user';
   styleUrls: ['./game-page.component.scss'],
 })
 export class GamePageComponent implements OnInit {
+  stringCondPrint: string = "";
 
   constructor(private http: HttpClient, protected MovieServ: MovieAPIService, private router: Router, protected authServ: AuthService) { }
   currentUser: Partial<UserLocalSt> = this.authServ.getCurrentUser();
@@ -81,6 +82,18 @@ export class GamePageComponent implements OnInit {
     }
 
     this.http.post<ScoreInfo>(`http://localhost:4567/score`, scoreComp).subscribe(() => { console.log(scoreComp + 'HA FUNZIONATO') })
+  }
+
+  printGameType(){
+    if(this.MovieServ.attribute === "release_date"){
+      this.stringCondPrint = "piú vecchio";
+      return "data di rilascio"
+    } else if(this.MovieServ.attribute === "revenue"){
+      this.stringCondPrint = "meno costoso";
+      return "fatturato"
+    }
+    this.stringCondPrint = "meno popolare";
+    return "popolaritá"
   }
 }
 

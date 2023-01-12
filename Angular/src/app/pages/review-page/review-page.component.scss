@@ -57,6 +57,10 @@ p span{
   bottom: 10px;
 }
 
+.under-card{
+  text-align: center;
+}
+
 /** ** buttons ** **/
 
 .close-btn{
@@ -76,16 +80,20 @@ p span{
   transform: scale(2);
 }
 
-.btn-l{
+.scale{
   transform: scale(0.65);
-  position: absolute;
-  left: -25px;
+}
+
+.btn-l{
+  position: relative;
+  left: 90px;
+  bottom: 680px;
 }
 
 .btn-r{
-  transform: scale(0.65);
-  position: absolute;
-  right: -25px;
+  position: relative;
+  right: -310px;
+  bottom: 680px;
 }
 
 .btn-cent{
@@ -93,30 +101,13 @@ p span{
   position: absolute;
   left: 50%;
   translate: -50%;
+  bottom: 440px;
 }
 
 .show-card-btn{
   position: relative;
   width: 100%;
   bottom: 50px;
-}
-
-
-.btn-bg-none{
-  border: none;
-  background: none;
-}
-
-.all-btn{
-  border-radius: 50px;
-  box-shadow: inset
-  red 0 0 0.5em 3px,
-  black 0 0 0.5em 4px,
-  white 0 0 0.5em 6px;
-}
-
-.all-btn:hover{
-  box-shadow: none;
 }
 
 /** ** all cards ** **/
@@ -194,6 +185,7 @@ p span{
 .review{
   width: 360px; 
   text-align: center;
+  margin-bottom: 30px;
 }
 
 /** ** film lists ** **/

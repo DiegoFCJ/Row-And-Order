@@ -1,7 +1,9 @@
 
-  <div class="gameRules">
-    <p>Devi ordinare i film dal più <span> vecchio </span>al più <span> giovane </span><span>{{MovieServ.attribute}}</span></p> 
+  <div class="first-text">
+    <p>Ordina i film per <span>{{printGameType()}}</span> considerando che:</p> 
+    <p>Il primo film a sinistra sará il {{stringCondPrint}}</p> 
   </div>
+  
   <div cdkDropList cdkDropListOrientation="horizontal" class="list" (cdkDropListDropped)="drop($event)">
     <div class="box" *ngFor="let movieee of movie" cdkDrag>
       <img class="img-siz" src="https://image.tmdb.org/t/p/w185/{{movieee.poster_path}}" [alt]="movieee.title"> 

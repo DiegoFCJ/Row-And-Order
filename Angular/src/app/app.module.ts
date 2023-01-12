@@ -28,6 +28,7 @@ import { NavBeforeLogComponent } from './components/navbars/navbar-before-log/na
 import { NavAfterLogComponent } from './components/navbars/nav-after-log/nav-after-log.component';
 import { LogoutComponent } from './components/logout/logout.component';
 import { ButtonComponent } from './components/button/button.component';
+import { LogRegPageComponent } from './log-reg-page/log-reg-page.component';
 
 
 @NgModule({
@@ -45,6 +46,7 @@ import { ButtonComponent } from './components/button/button.component';
     LogoutComponent,
     ProfileComponent,
     ButtonComponent,
+    LogRegPageComponent,
   ],
   imports: [
     BrowserModule,
